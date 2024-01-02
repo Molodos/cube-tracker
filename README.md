@@ -2,6 +2,8 @@
 
 A python tool that uses six ArUco markers in order to track a cube in a 3D space using a webcam and OpenCV.
 
+![PReview](readme_images/preview.png)
+
 ## Building the Cube
 
 The cube must be at least 50x50x50mm big for the 50x50mm ArUco markers to fit.
@@ -24,7 +26,7 @@ The cube must be at least 50x50x50mm big for the 50x50mm ArUco markers to fit.
    ```
 2) Print out `data/calibration_checkerboard` on A4 without scaling
 3) Get a solid plate (like a cardboard box) and stick the checkerboard onto it, so it cannot bend anymore
-   ![Finished cube](readme_images/checkerboard.jpg)
+   ![Checkerboard](readme_images/checkerboard.jpg)
 4) Use your webcam to make 20 images of your checkerboard
     - Use the Windows Camera app or something similar
     - Tilt the board in different directions and change the distance to the camera inbetween the images

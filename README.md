@@ -41,7 +41,8 @@ The cube must be at least 50x50x50mm big for the 50x50mm ArUco markers to fit.
 
 1) Install the requirements if not already done:
    ```shell
-   pip in
+   pip install -r requirements.txt
+   ```
 2) After calibrating, start the main script:
    ```shell
    python cube_tracker.py

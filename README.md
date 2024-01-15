@@ -48,3 +48,8 @@ The cube must be at least 50x50x50mm big for the 50x50mm ArUco markers to fit.
    python cube_tracker.py
    ```
 3) Press `q` to quit
+
+## Using it in Blender
+
+1) Install `opencv-contrib-python` in blender: http://www.codeplastic.com/2019/03/12/how-to-install-python-modules-in-blender/
+2) Use the `example.blend`

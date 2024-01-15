@@ -25,14 +25,20 @@ def track(matrix_coefficients, distortion_coefficients):
                                   [-marker_size / 2, -marker_size / 2, 0]], dtype=np.float32)
         corners, ids, rejected_img_points = detector.detectMarkers(gray)
         if np.all(ids is not None):  # If there are markers found by detector
-            for i in range(0, len(ids)):  # Iterate in markers
-                marker_id = ids[i]
+
+            # Got through all found markers
+            for i in range(0, len(ids)):
+                # Get id
+                marker_id: int = ids[i][0]
+
                 # Estimate pose of each marker and return the values rvec and tvec---different from camera coefficients
                 success, rvec, tvec = cv2.solvePnP(marker_points, corners[i], matrix_coefficients,
                                                    distortion_coefficients)
+
                 (rvec - tvec).any()  # get rid of that nasty numpy value array error
                 aruco.drawDetectedMarkers(frame, corners)  # Draw A square around the markers
                 cv2.drawFrameAxes(frame, matrix_coefficients, distortion_coefficients, rvec, tvec, 30)
+
         # Display the resulting frame
         cv2.imshow('frame', frame)
         # Wait 3 milisecoonds for an interaction. Check the key and do the corresponding job.
